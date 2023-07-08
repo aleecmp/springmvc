@@ -8,6 +8,6 @@ public interface ICapacitationDao {
 
     public List<Capacitation> GetAllCapacitations();
 
-    public Capacitation createCapacitation();
+    public boolean createCapacitation(Capacitation capacitation);
 
 }

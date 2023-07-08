@@ -1,4 +1,7 @@
-C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\ContactController.java
-C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\CreateCapacitationController.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\models\Capacitation.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\controllers\ListCapacitationsController.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\dao\ICapacitationDao.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\dao\CapacitationDao.java
 C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\HomeController.java
-C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\ListCapacitationsController.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\controllers\CreateCapacitationController.java
+C:\Users\alecm\OneDrive\Escritorio\M6Grupales\springmvc\src\main\java\cl\awakelab\springmvc\controllers\ContactController.java

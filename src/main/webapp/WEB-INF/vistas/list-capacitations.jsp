@@ -1,19 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ taglib prefix="core"
-uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="
-    <core:url value="/res/css/styles.css" />
-    ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<core:url value='/res/css/styles.css' />" />
     <title>Listado Capacitaciones</title>
   </head>
   <body>
@@ -34,26 +28,24 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </tr>
           </thead>
           <tbody class="table-group-divider">
-            <tr>
-              <td>1</td>
-              <td>15.444.567-9</td>
-              <td>12-06-2023</td>
-              <td>5</td>
-              <td>Oficina Central</td>
-              <td>6</td>
-              <td>22</td>
-            </tr>
+            <c:forEach var="capacitation" items="${capacitations}">
+              <tr>
+                <td>${capacitation.getId()}</td>
+                <td>${capacitation.getRutCliente()}</td>
+                <td>${capacitation.getDia()}</td>
+                <td>${capacitation.getHora()}</td>
+                <td>${capacitation.getLugar()}</td>
+                <td>${capacitation.getDuracion()}</td>
+                <td>${capacitation.getCantidadAsistentes()}</td>
+              </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- 	script bootstrap -->
+    <!-- script bootstrap -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
 </html>
