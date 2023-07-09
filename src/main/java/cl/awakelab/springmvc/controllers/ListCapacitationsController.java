@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import cl.awakelab.springmvc.dao.ICapacitationDao;
+import cl.awakelab.springmvc.dao.CapacitationDaoImpl;
 import cl.awakelab.springmvc.models.Capacitation;
 
 @Controller
 public class ListCapacitationsController {
 
     @Autowired
-    private ICapacitationDao capacitacionDao;
+    private CapacitationDaoImpl capacitacionDao;
 
     @RequestMapping(path = "/list-capacitations", method = RequestMethod.GET)
     public ModelAndView listCapacitations() {
