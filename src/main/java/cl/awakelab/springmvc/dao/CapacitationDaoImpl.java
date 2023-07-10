@@ -2,12 +2,14 @@ package cl.awakelab.springmvc.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import cl.awakelab.springmvc.models.Capacitation;
 
@@ -22,22 +24,28 @@ public class CapacitationDaoImpl implements ICapacitationDao {
 
 	@Override
 	public List<Capacitation> GetAllCapacitations() {
+
 		String sql = "SELECT id, rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes FROM capacitaciones";
 		return template.query(sql, new CapacitationRowMapper());
 	}
 
 	@Override
 	public boolean createCapacitation(Capacitation capacitation) {
-		System.out.println("Datos de la capacitación:");
-		System.out.println("ID: " + capacitation.getId());
-		System.out.println("Rut Cliente: " + capacitation.getRutCliente());
-		System.out.println("Día: " + capacitation.getDia());
-		System.out.println("Hora: " + capacitation.getHora());
-		System.out.println("Lugar: " + capacitation.getLugar());
-		System.out.println("Duración: " + capacitation.getDuracion());
-		System.out.println("Cantidad de Asistentes: " + capacitation.getCantidadAsistentes());
 
-		return true;
+		String sql = "INSERT INTO capacitaciones(rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes) "
+				+ "VALUES (?, ?, ?, ?, ?, ?)";
+
+		int rowsAffected = template.update(sql, capacitation.getRutCliente(), capacitation.getDia(),
+				capacitation.getHora(), capacitation.getLugar(), capacitation.getDuracion(),
+				capacitation.getCantidadAsistentes());
+
+		if (rowsAffected > 0) {
+			System.out.println("Capacitación guardada correctamente.");
+			return true;
+		} else {
+			System.out.println("Error al guardar la capacitación.");
+			return false;
+		}
 	}
 
 	private static class CapacitationRowMapper implements RowMapper<Capacitation> {
